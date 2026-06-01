@@ -3,9 +3,13 @@ const { google } = require("googleapis");
 // =====================
 // AUTH SETUP
 // =====================
+const { google } = require("googleapis");
+
 const auth = new google.auth.GoogleAuth({
-  credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS),
-  scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+  keyFile: "service-account.json",
+  scopes: [
+    "https://www.googleapis.com/auth/spreadsheets"
+  ]
 });
 
 // =====================
