@@ -1,17 +1,16 @@
-# Base image Node
-FROM node:20
+FROM node:18-alpine
 
 # Set working directory
 WORKDIR /app
 
-# Copy package files
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install --production
 
-# Copy semua file project
+# Copy the rest of your app's source code
 COPY . .
 
-# Start bot
-CMD ["npm", "start"]
+# Run your bot script
+CMD ["node", "index.js"]
