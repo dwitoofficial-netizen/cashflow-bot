@@ -13,4 +13,4 @@ RUN npm install --production
 COPY . .
 
 # Run your bot script
-CMD ["node", "index.js"]
+CMD ["node", "bot.js"]
